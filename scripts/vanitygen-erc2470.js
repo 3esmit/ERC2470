@@ -4,12 +4,14 @@ const argLen = process.argv.length;
 const startingBytes = (argLen > 2) ? process.argv[2] : "0x0000";
 const startSalt = (argLen > 3) ? parseInt(process.argv[3]) : 0
 const lookFor = (argLen > 4) ? parseInt(process.argv[4]) : 10;
+const artifactFile = (argLen > 5) ? process.argv[5] : "./artifact.json" ;
+const encodedConstructorParams = (argLen > 6) ? process.argv[6] : "" ;
 
 const prefix = Buffer.from('ff', 'hex');
 const factoryAddress =  ethUtils.toBuffer("0xce0042B868300000d44A59004Da54A005ffdcf9f");
-const bytecode = ethUtils.toBuffer('0x' + require(`../artifacts/combined.json`).contracts['./contracts/SingletonExample.sol:SingletonExample'].bin);
-const _owner = "0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359";
-const initCode = Buffer.concat([bytecode, ethUtils.setLengthLeft(_owner, 32)]);
+const bytecodeString = require(artifactFile).bytecode
+const bytecode = ethUtils.toBuffer(bytecodeString);
+const initCode = Buffer.concat([bytecode, ethUtils.toBuffer(encodedConstructorParams)]);
 const initCodeHash = ethUtils.keccak256(initCode);
 
 console.log(`SingletonFactory: ${factoryAddress.toString('hex')} `)
@@ -27,7 +29,7 @@ while(found < lookFor){
     if(address.toLowerCase().startsWith("0x"+startingBytes.replace("0x","").toLowerCase())){
         found++;
         console.log("| 0x" + salt.toString('hex') + " | " + address + " |");
-    }   
+    }
 }
 
 console.log(`Searched up to index ${index}.`)
