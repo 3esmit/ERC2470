@@ -16,8 +16,8 @@ for OFFSET in `seq 0 $BATCHSIZE $ITERATIONS`; do
         IV=$((${START} + ${OFFSET} + ${VALUE}))
         sed -i -Ee "s/^\/\/ IV:.+$/\/\/ IV: $((${IV}))/1" "tmp/${VALUE}/contracts/SingletonFactory.sol"
         pushd "./tmp/${VALUE}" > /dev/null
-        solc --overwrite --optimize --optimize-runs 200 --metadata-literal --output-dir ./artifacts \
-            --combined-json abi,bin ./contracts/SingletonFactory.sol >/dev/null &
+        solc --overwrite --optimize --optimize-runs 200 --metadata-literal --output-dir ./artifacts \ 
+            --combined-json abi,asm,bin,devdoc,hashes,metadata,opcodes,srcmap,userdoc ./contracts/SingletonFactory.sol >/dev/null &
         popd > /dev/null
     done
     wait
