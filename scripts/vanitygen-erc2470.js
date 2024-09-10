@@ -12,7 +12,7 @@ const _owner = "0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359";
 const initCode = Buffer.concat([bytecode, ethUtils.setLengthLeft(_owner, 32)]);
 const initCodeHash = ethUtils.keccak256(initCode);
 
-console.log(`SingletonFactory: ${factoryAddress.toString('hex')} `)
+console.log(`ERC2470: ${factoryAddress.toString('hex')} `)
 console.log(`initCode: 0x${initCode.toString('hex')}`);
 console.log(`# Searching ${lookFor} salt wich creates address starting with ${startingBytes}`);
 console.log('| SALT                                                               | RESULTING ADDRESS                          |');

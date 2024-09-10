@@ -9,7 +9,7 @@ This repository contains the official implementation of the [ERC2470 factory] as
 
 The address of the factory on **all chains** is:
 
-<h4><pre>0xce0042B868300000d44A59004Da54A005ffdcf9f</pre></h4>
+<h4><pre>TBD</pre></h4>
 
 ### Vanity Generator for ERC2470 Singletons
 
@@ -24,7 +24,7 @@ The script simply try salts for the bytecode of that example.
 
 ## Compilation & Verification
 
-> :warning: The `solc` compiler version `0.5.11+commit.22be8592` must be present on the build machine. ([More info on installing solc][solc-install].)
+> :warning: The `solc` compiler version `0.7.3+commit.9bfce1f6` must be present on the build machine. ([More info on installing solc][solc-install].)
 
 The factory can be compiled from the source code using:
 
@@ -42,9 +42,9 @@ The address of the account creating the factory, the address of the factory and 
 $ npm run info
 > node js/info.js
 
-RawTx:  0xf9016c8085174876e8008303c4d88080b90154608060405234801561001057600080fd5b50610134806100206000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c80634af63f0214602d575b600080fd5b60cf60048036036040811015604157600080fd5b810190602081018135640100000000811115605b57600080fd5b820183602082011115606c57600080fd5b80359060200191846001830284011164010000000083111715608d57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929550509135925060eb915050565b604080516001600160a01b039092168252519081900360200190f35b6000818351602085016000f5939250505056fea26469706673582212206b44f8a82cb6b156bfcc3dc6aadd6df4eefd204bc928a4397fd15dacf6d5320564736f6c634300060200331b83247000822470
-Sender:  0xBb6e024b9cFFACB947A71991E386681B1Cd1477D
-Contract: 0xce0042B868300000d44A59004Da54A005ffdcf9f
+RawTx:  TBD
+Sender:  TBD
+Contract: TBD
 ```
 
 Those values can be compared with the values in the [ERC2470 standard][ERC2470].
@@ -70,13 +70,13 @@ The vanity address of the factory---starting with `0x2470`---has been generated 
 
 ## License
 
-> The [ERC2470 factory] is part of the  [ERC2470 standard][ERC2470] and is therefore in the public domain via [CC0].
+> The [ERC2470 factory] is part of the [ERC2470 standard][ERC2470] and is therefore in the public domain via [CC0].
 
 The authors waive all copyright and related or neighboring rights for the rest of this repository's content via [CC0]. A copy of the [CC0] waiver is included in the [LICENSE] file.
 
 [ERC820]: https://eips.ethereum.org/EIPS/eip-820
 [ERC2470]: https://eips.ethereum.org/EIPS/eip-2470
-[ERC2470 factory]: https://github.com/3esmit/ERC2470/blob/master/contracts/SingletonFactory.sol
+[ERC2470 factory]: https://github.com/3esmit/ERC2470/blob/master/contracts/ERC2470.sol
 [`scripts/vanitygen.sh`]: https://github.com/3esmit/erc2470/blob/master/scripts/vanitygen.sh
 [`scripts/vanitygen-info.js`]: https://github.com/3esmit/erc2470/blob/master/scripts/vanitygen-info.js
 [3esmit]: https://github.com/3esmit

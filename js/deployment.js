@@ -32,7 +32,7 @@ deploy = async (web3, account = undefined) => {
         });
         await web3.eth.sendSignedTransaction(res.rawTx);
     }
-    return await new web3.eth.Contract(artifacts.contracts.SingletonFactory.SingletonFactory.abi, res.contractAddr);
+    return await new web3.eth.Contract(artifacts.contracts.ERC2470.ERC2470.abi, res.contractAddr);
 };
 
 

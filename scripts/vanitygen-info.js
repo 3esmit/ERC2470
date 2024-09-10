@@ -8,7 +8,7 @@ const start = parseInt(process.argv[4]);
 
 for (let i = 0; i < batchsize; i++) {
   const code = ('0x' +
-    require(`../tmp/${i}/artifacts/combined.json`).contracts['./contracts/SingletonFactory.sol:SingletonFactory'].bin);
+    require(`../tmp/${i}/artifacts/combined.json`).contracts['./contracts/ERC2470.sol:ERC2470'].bin);
   const tx = new ethTx({...rawTransaction, data: code});
   const contractAddr = ethUtils.toChecksumAddress(
     ethUtils.generateAddress(tx.getSenderAddress(), ethUtils.toBuffer(0)).toString('hex')

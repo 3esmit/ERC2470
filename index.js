@@ -1,9 +1,9 @@
 const deployment = require('./js/deployment');
-const SingletonFactory = require('./js/artifacts')().contracts.SingletonFactory.SingletonFactory;
+const ERC2470 = require('./js/artifacts')().contracts.ERC2470.ERC2470;
 const { contractAddr } = deployment.generateDeployTx();
 
 module.exports = {
   deploy: deployment.deploy,
   generateDeployTx: deployment.generateDeployTx,
-  SingletonFactory: (web3, options = {}) => SingletonFactory.instance(web3, contractAddr, options)
+  ERC2470: (web3, options = {}) => ERC2470.instance(web3, contractAddr, options)
 };
